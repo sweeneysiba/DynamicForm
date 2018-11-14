@@ -1,0 +1,87 @@
+<!-- <div class="container-fluid">
+    <div class="form-group" class="row">
+        <form [formGroup]= "employeeForm">
+            <mat-form-field class="example-full-width col-sm-12">
+          <div class="form-group" [ngClass]="{'has-error' : employeeForm.get('name').errors  && 
+                                              (employeeForm.get('name').touched ||employeeForm.get('name').dirty)}">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">      
+                  <input matInput type="text" formControlName="name" id="name" placeholder="Name" required>
+                  <span class="help-block" *ngIf="{'has-error' : employeeForm.get('name').errors  && 
+                                                    (employeeForm.get('name').touched || employeeForm.get('name').dirty)}">
+      
+                    <span *ngIf="!employeeForm.get('name').valid">
+                      Name is Required.
+                    </span>
+                  </span>
+              </div>
+          </div>
+        </mat-form-field>
+
+          <mat-form-field class="example-full-width col-sm-12">
+        
+          <div class="form-group" [ngClass]="{'has-error' : employeeForm.get('city').errors  && 
+                                              (employeeForm.get('city').touched ||employeeForm.get('city').dirty)}">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">      
+                  <input type="text" matInput formControlName="city" id="city" placeholder="City" required>
+                  <span class="help-block" *ngIf="{'has-error' : employeeForm.get('city').errors  && 
+                                                    (employeeForm.get('city').touched || employeeForm.get('city').dirty)}">
+      
+                    <span *ngIf="!employeeForm?.get('city')?.valid">
+                      City is Required.
+                    </span>
+                  </span>
+              </div>
+          </div>
+        </mat-form-field>
+
+          <mat-form-field class="example-full-width col-sm-12">
+
+          <div class="form-group" [ngClass]="{'has-error' : employeeForm.get('country').errors  && 
+                                             (employeeForm.get('country').touched ||employeeForm.get('country').dirty)}">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">      
+              <input type="text" matInput formControlName="country" id="country" placeholder="Country" required>
+              <span class="help-block" *ngIf="{'has-error' : employeeForm.get('country').errors  && 
+                        (employeeForm.get('country').touched || employeeForm.get('country').dirty)}">
+      
+                  <span *ngIf="!employeeForm.get('country')?.valid">
+                  Country is Required.
+                  </span>
+              </span>
+            </div>
+          </div>
+
+        </mat-form-field>
+
+          <div class="form-group" [ngClass]="{'has-error' : employeeForm.get('gender').errors  && 
+                                                (employeeForm.get('gender').touched ||employeeForm.get('gender').dirty)}">
+              <label class="col-sm-2 control-label" >Gender</label>  
+              <div class="col-sm-10">      
+                  <mat-radio-group formControlName="gender">
+                      <mat-radio-button value="male">Male</mat-radio-button>
+                      <mat-radio-button value="female">Female</mat-radio-button>
+                      <mat-radio-button value="others">Others</mat-radio-button>
+                    </mat-radio-group>
+                  <span class="help-block" *ngIf="{'has-error' : employeeForm.get('gender').errors  && 
+                                                  (employeeForm.get('gender').touched || employeeForm.get('gender').dirty)}">
+                    <span *ngIf="!employeeForm.get('gender')?.valid">
+                      Gender is Required.
+                    </span>
+                  </span>
+              </div>
+          </div>
+          <br>
+          <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled] ="!employeeForm.valid" >Submit</button>
+        </form>
+      </div>
+</div> -->
+
+
+
+<div *ngFor="let form of forms" >
+  <app-radiofield *ngIf="form.input == 'radio'" [form]="form"></app-radiofield>
+  <app-textfield *ngIf="form.input == 'text'" [form]="form"></app-textfield>
+
+</div>
