@@ -13,7 +13,7 @@
     <input *ngSwitchCase="'textbox'" [formControlName]="input.key"
             [id]="input.key" [type]="input.type">
 
-    <div *ngSwitchCase="'radio'">
+    <div *ngSwitchCase="'radiobox'">
       <input  [formControlName]="input.key"
       [id]="input.key" [type]="input.type" *ngFor="let opt of input.options" []>
     </div>
